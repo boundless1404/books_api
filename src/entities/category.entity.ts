@@ -1,5 +1,4 @@
-export default interface Category {
-    id: number,
-    name: String,
+export default class Category {
+    name: String;
     description: String
 }
