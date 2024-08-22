@@ -1,6 +1,7 @@
-import { Type } from "../enum/type";
-export default class BookInventory {
-    name: string;
-    type: Type;
-    quantity: number
+import { InventoryType } from "../enum/type";
+
+export default class LibraryInventory {
+    name: string; // like book inventory
+    type: InventoryType;
+    quantity: number;
 }

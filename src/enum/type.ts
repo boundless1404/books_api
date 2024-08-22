@@ -1,3 +1,3 @@
-export enum Type {
+export enum InventoryType {
     Book = "book"
 }

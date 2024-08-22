@@ -8,14 +8,15 @@ import BorrowedBook from "./src/entities/borrowed_book.entity";
 import Category from "./src/entities/category.entity";
 import User from "./src/entities/user.entity";
 import BookInventoryBooks from './src/entities/book_inventory_books.entity';
-import BookInventory from './src/entities/book_inventory.entity';
-import { Type } from './src/enum/type';
+import { InventoryType } from './src/enum/type';
 import { AvailabilityStatus } from './src/enum/availability.enum';
+import LibraryInventory from './src/entities/book_inventory.entity';
 
 
 // In-memory list of books
 let books: Book[] = [
     {
+        id: 1,
         title: "To Kill a Mockingbird",
         categoryId: 1,
         author: "Harper Lee",
@@ -23,6 +24,7 @@ let books: Book[] = [
         publication_year: 1960
     },
     {
+        id: 2
         title: "1984",
         categoryId: 2,
         author: "George Orwell",
@@ -30,6 +32,7 @@ let books: Book[] = [
         publication_year: 1949
     },
     {
+        id: 3,
         title: "Pride and Prejudice",
         categoryId: 1,
         author: "Jane Austen",
@@ -37,6 +40,7 @@ let books: Book[] = [
         publication_year: 1813
     },
     {
+        id: 4,
         title: "The Great Gatsby",
         categoryId: 1,
         author: "F. Scott Fitzgerald",
@@ -44,12 +48,30 @@ let books: Book[] = [
         publication_year: 1925
     },
     {
+        id: 5,
         title: "Moby-Rick",
         categoryId: 3,
         author: "Herman Melville",
         description: "A novel about the voyage of the whaling ship Pequod and its captain's obsession with the white whale, Moby Rick.",
         publication_year: 1851
-    }
+    },
+    {
+        id: 6,
+        title: "1984",
+        categoryId: 2,
+        author: "George Orwell",
+        description: "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
+        publication_year: 1949
+    },
+    {
+        id: 7,
+        title: "Moby-Rick",
+        categoryId: 3,
+        author: "Herman Melville",
+        description: "A novel about the voyage of the whaling ship Pequod and its captain's obsession with the white whale, Moby Rick.",
+        publication_year: 1851
+    },
+    
 ];
 
 let category: Category[] = [
@@ -77,57 +99,47 @@ let category: Category[] = [
 
 let bookInventoryBooks : BookInventoryBooks[] = [
     {
-        bookId: 5 ,
-        bookInventoryId: 3,
-        availability_status: AvailabilityStatus.Borrowed
-    },
-    {
         bookId: 1,
-        bookInventoryId: 5,
-        availability_status: AvailabilityStatus.Borrowed
-    },
-    {
-        bookId: 3,
-        bookInventoryId: 3,
-        availability_status: AvailabilityStatus.Returned
+        bookInventoryId: 1,
+        availability_status: AvailabilityStatus.BORROWED
     },
     {
         bookId: 2,
         bookInventoryId: 1,
-        availability_status: AvailabilityStatus.Returned
+        availability_status: AvailabilityStatus.BORROWED
     },
     {
-        bookId: 1,
-        bookInventoryId: 2,
-        availability_status: AvailabilityStatus.Returned
+        bookId: 3,
+        bookInventoryId: 1,
+        availability_status: AvailabilityStatus.AVAILABLE
+    },
+    {
+        bookId: 4,
+        bookInventoryId: 1,
+        availability_status: AvailabilityStatus.AVAILABLE
+    },
+    {
+        bookId: 5,
+        bookInventoryId: 1,
+        availability_status: AvailabilityStatus.AVAILABLE
+    },
+    {
+        bookId: 6,
+        bookInventoryId: 1,
+        availability_status: AvailabilityStatus.AVAILABLE
+    },
+    {
+        bookId: 7,
+        bookInventoryId: 1,
+        availability_status: AvailabilityStatus.AVAILABLE
     }
 ];
 
-let booksInventory : BookInventory[] = [
+let booksInventory : LibraryInventory[] = [
     {
-        name: "To Kill a Mockingbird",
-        type: Type.Book,
-        quantity: 5
-    },
-    {
-        name: "1984",
-        type: Type.Book,
-        quantity: 7
-    },
-    {
-        name: "Pride and Prejudice",
-        type: Type.Book,
-        quantity: 4
-    },
-    {
-        name: "The Great Gatsby",
-        type: Type.Book,
-        quantity: 8
-    },
-    {
-        name: "Moby-Rick",
-        type: Type.Book,
-        quantity: 10
+        name: 'book Inventory',
+        type: InventoryType.Book,
+        quantity: 7,
     }
 ];
 
